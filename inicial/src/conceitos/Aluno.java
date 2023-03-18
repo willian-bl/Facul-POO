@@ -12,7 +12,7 @@ package conceitos;
 
 // A classe fornece o encapsulamento em Java
 // Podemos proteger os dados e impor restrições/validações 
-public class Aluno { 
+public class Aluno {
     
     // Os atributos ou variáveis são declarados fora de qualquer método
     // Para declarar uma variável inteira, utilizamos o tipo int
@@ -62,6 +62,13 @@ public class Aluno {
     
     public void setCursoAluno(String c){
         cursoAluno = c;
+    }
+    
+    public void printAluno() {
+        System.out.printf("%s%d%n", "RGM: ", rgm);
+        System.out.printf("%s%s%n", "Nome: ", nomeAluno);
+        System.out.printf("%s%s%n", "Curso: ", cursoAluno);
+        System.out.printf("%s%2f%n", "Nota: ", notaAluno);
     }
     
 }
