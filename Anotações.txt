@@ -1,0 +1,20 @@
+----- POO 15/02/2023 -------------------------------------------------------------------------------------------------------------------------------------------------
+
+*Abstrair é focar no que é importante, para conseguir resolver problemas através da programação
+
+Conceitos de Orientação a Objetos:
+	- Encapsulamento:
+		Restringe acessos a métodos e atributos e faz com que cada classe tenha sua própria responsabilidade. Também esconde detalhes da implementação que não nos interessa.
+	- Herança:
+		Ajuda com a reutilização do código. Pensar em herança genética. É construir uma classe mais específica com base em uma classe generalizada. Essa classe específica vai herdar características, métodos e atributos da classe generalizada.
+	- Polimorfismo:
+		Duas classes com a mesma linha de herança podem possuir comportamentos diferentes para o mesmo método
+
+------- JAVA ------------------------------
+Java é uma linguagem fortemente tipada
+	
+O código fonte .java é compilado em .class para ser executado na JVM (Java Virtual Machine). Esta, por sua vez, é instalada no computador do usuário através do kit JRE (Java Runtime Environment). Assim, quem compila o código para linguagem de máquina é a JVM, que é a mesma em Windows, Linux, MAC etc. Dessa forma, um código feito em JAVA pode rodar em diferentes plataformas, sem precisar de adaptações.
+
+O JDK é o Java Development Kit (ou kit de desenvolvimento Java). Quem pretende desenvolver em JAVA tem que ter esse kit instalado na máquina. Ele já vem também com o JRE.
+
+O Java possui versões LTS (Long Term Support) e Feature Releases. As feature releases são lançadas de 6 em 6 meses. São versões oficiais que trazem novas funcionalidades para os programadores testarem. Porém, o suporte dessas versões é de apenas 6 meses. Já as LTS's são lançadas de 3 em 3 anos e trazem um apanhado das funcionalidades lançadas com as Feature Releases, tendo um tempo de suporte bem maior que as feature releases. É recomendado usar LTS em ambiente de produção, para não precisar ficar atualizando a versão do Java a cada 6 meses.

@@ -18,83 +18,95 @@ int segundo - Com valores válidos entre 0 e 59
 Qualquer inconsistência atribuir o valor 0
 
 1) Criar um método para incrementar e um para decrementar o segundo em 1 unidade. Ex: 10:59:59 + 1s = 11:00:00
-2) Criar um método para mostrar a hora no formato hh:mm:ss
+2) Criar um método para mostrar a hora de maneira formatada (hh:mm:ss)
 
 */
 
 public class Tempo {
-    private int horas, minutos, segundos;
+    private int hora, minuto, segundo;
     
-    public int getHoras(){
-        return horas;
+    public Tempo(int hora, int minuto, int segundo){
+        setHora(hora);
+        setMinuto(minuto);
+        setSegundo(segundo);
     }
     
-    public void setHoras(int hs){
-        if(hs >= 0 && hs <= 23){
-            horas = hs;
+    public Tempo(int hora){
+        setHora(hora);
+        minuto = 0;
+        segundo = 0;
+    }
+    
+    public int getHora(){
+        return hora;
+    }
+    
+    public void setHora(int hora){
+        if(hora >= 0 && hora <= 23){
+            this.hora = hora;
         }
         else{
-            horas = 0;
+            this.hora = 0;
         }
     }
             
-    public int getMinutos(){
-        return minutos;
+    public int getMinuto(){
+        return minuto;
     }
     
-    public void setMinutos(int min){
-        if(min >= 0 && min <= 60){
-            minutos = min;
+    public void setMinuto(int minuto){
+        if(minuto >= 0 && minuto <= 60){
+            this.minuto = minuto;
         }
         else{
-            minutos = 0;
+            this.minuto = 0;
         }
     }
             
             
-    public int getSegundos(){
-        return segundos;
+    public int getSegundo(){
+        return segundo;
     }
     
-    public void setSegundos(int seg){
-        if(seg >= 0 && seg <= 60){
-            segundos = seg;
+    public void setSegundo(int segundo){
+        if(segundo >= 0 && segundo <= 60){
+            this.segundo = segundo;
         }
         else{
-            segundos = 0;
+            this.segundo = 0;
         }
     }
         
     
     public void incrementaSegundo(){
-        segundos++;
-        if(segundos > 59){
-            segundos = 0;
-            minutos++;
+        segundo++;
+        if(segundo > 59){
+            segundo = 0;
+            minuto++;
             
-            if(minutos > 59){
-                minutos = 0;
-                horas++;
+            if(minuto > 59){
+                minuto = 0;
+                hora++;
                 
-                if(horas > 23){
-                    horas = 0;
+                if(hora > 23){
+                    hora = 0;
                 }
             }
         }
     }
     
         public void decrementaSegundo(){
-        segundos--;
-        if(segundos < 0){
-            segundos = 59;
-            minutos--;
+        segundo--;
+        if(segundo < 0){
+            segundo = 59;
+            minuto--;
             
-            if(minutos < 0){
-                minutos = 59;
-                horas--;
+            if(minuto < 0){
+                minuto = 59;
+                hora--;
                 
-                if(horas < 0){
-                    horas = 23;
+                if(hora < 0){
+                    hora = 23;
                 }
             }
         }
@@ -102,10 +114,31 @@ public class Tempo {
         
     public String obtemHora(){
         String s;
-        s = horas+":"+minutos+":"+segundos;
+        s = hora+":"+minuto+":"+segundo;
         
         return s;
     }
         
 
 }
+
+// this -> a palavra reservada this representa a própria classe.
+// Quando ela é chamada dentro de uma classe, ela se auto-referencia. Ou seja, é como se a classe chamasse ela mesma.
+// Ex: Se minha classe tem um atributo "a" e quero acessá-lo, podemos usar this.a
+
+
+/*
+Assinatura de um método
+
+O que difere um método de outro método não é o nome, mas a sua assinatura.
+A assinatura abrange o nome do método e a lista de parâmetros.
+
+Exemplos:
+    pulblic void soma(){...}
+    pulblic void soma(int a){...}
+    pulblic void soma(int a, int b){...}
+    pulblic void soma(double a, double b) {...}
+
+Assim, na classe, podemos ter vários métodos construtores, desde que possuam lista de parâmetros distintos
+
+*/

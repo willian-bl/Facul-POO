@@ -11,32 +11,28 @@ package conceitos;
 public class TestaTempo {
     
     public static void main(String[] args) {
-        Tempo t1 = new Tempo();
-        t1.setHoras(23);
-        t1.setMinutos(59);
-        t1.setSegundos(59);
+        Tempo t1 = new Tempo(23, 59, 59);
         
         t1.incrementaSegundo();
         t1.incrementaSegundo();
         
         System.out.println(t1.obtemHora());
         
-        Tempo t2 = new Tempo();
-        t2.setHoras(0);
-        t2.setMinutos(0);
-        t2.setSegundos(2);
-        
-        t2.decrementaSegundo();
-        t2.decrementaSegundo();
-        t2.decrementaSegundo();
-        
-        System.out.println(t2.obtemHora());
-        
-//        System.out.println("\n\n");
-//            for (int i = 0; i < 60; i++) {
-//            t2.incrementaSegundo();
-//            System.out.println(t2.obtemHora());
-//        }
+        Tempo t2 = new Tempo(12);
+        System.out.println("Hora t2: " + t2.obtemHora());
+        }
     
     }
-}
+
+// Quando criamos uma nova variável/instanciamos um objeto sem declarar seu valor/atributos, os atributos/variáveis recebem valores padrão:
+// Objeto: Null
+// Boolean: false
+// Numerico: 0
+
+// Método construtor:
+// *O método construtor é utilizado para iniciar os atributos. Atribui valores iniciais aos atributos
+// *Ele é chamado quando o objeto é criado
+// *Pussui o mesmo nome da classe
+// *Pode ou não receber parâmetros
+// *Não retorna nada, nem mesmo void
+// *É obrigatório. Se não for definido a maquina virtual cria o método construtor
