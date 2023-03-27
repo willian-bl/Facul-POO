@@ -19,4 +19,4 @@ Repositório com meus notebooks utilizados nas aulas de Programação Orientada 
   - _getters_ e _setters_
   - Encapsulamento
   - Método construtor
-  - Palavra reservada `this`: Referenciando a clase dentro de sim mesma
+  - Palavra reservada `this`: Referenciando a clase dentro de si mesma
