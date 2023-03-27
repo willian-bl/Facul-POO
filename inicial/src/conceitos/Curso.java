@@ -12,8 +12,22 @@ public class Curso {
     
     private String nome;
     private String coordenador;
-    private String dataCriacao;
+    private int anoCriacao;
     private String area;
+    
+    public Curso(String nome, String area, int anoCriacao){
+        setNome(nome);
+        setArea(area);
+        setAnoCriacao(anoCriacao);
+        this.coordenador = "Sem dados";
+    }
+    
+    public Curso(String nome, String area, int anoCriacao, String coordenador){
+        setNome(nome);
+        setArea(area);
+        setAnoCriacao(anoCriacao);
+        setCoordenador(coordenador);
+    }
     
     public String getNome(){
         return nome;
@@ -23,34 +37,34 @@ public class Curso {
         return coordenador;
     }
     
-    public String getDataCriacao(){
-        return dataCriacao;
+    public int getAnoCriacao(){
+        return anoCriacao;
     }
     
     public String getArea(){
         return area;
     }
     
-    public void setNome(String n){
-        nome = n;
+    public void setNome(String nome){
+        this.nome = nome;
     }
     
-    public void setCoordenador(String c){
-        coordenador = c;
+    public void setCoordenador(String coordenador){
+        this.coordenador = coordenador;
     }
     
-    public void setDataCriacao(String data){
-        dataCriacao = data;
+    public void setAnoCriacao(int ano){
+        this.anoCriacao = ano;
     }
 
-    public void setArea(String a) {
-        area = a;
+    public void setArea(String area) {
+        this.area = area;
     }
           
     public void printCurso(){
         System.out.printf("%s%s%n", "Nome: ", nome);
         System.out.printf("%s%s%n", "Coordenador: ", coordenador);
-        System.out.printf("%s%s%n", "DataCriacao: ", dataCriacao);
+        System.out.printf("%s%d%n", "anoCriacao: ", anoCriacao);
         System.out.printf("%s%s%n", "Area: ", area);
     }
     

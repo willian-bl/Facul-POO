@@ -14,5 +14,15 @@ public class TestaConta {
         ContaCorrente c1 = new ContaCorrente(2378, "Carlos", 3000, 4000);
         
         c1.extrato();
+        
+        ContaCorrente c2 = new ContaCorrente(2529, "João");
+        c2.extrato();
+        
+        c1.transferePara(c2, 1000);
+        
+        c1.extrato();
+        c2.extrato();
+        
+        
     }
 }

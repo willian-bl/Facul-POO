@@ -108,6 +108,23 @@ public class ContaCorrente {
     }
     
     
+    // Função feita por mim, adicionando interação entre dois objetos do tipo ContaCorrente.
+    // Efetua uma transferência, sacando o valor da conta que chama o método e depositando na conta passada
+    // como parâmetro
+    public void transferePara(ContaCorrente conta, double valor){
+        if(this.saldo + this.limite >= valor){
+            this.sacar(valor);
+            conta.depositar(valor);
+            
+            System.out.println("\nTransferido R$" + valor + " da conta " + this.getNumConta() + " para a conta " + conta.getNumConta());
+        }
+        else{
+            System.out.println("\nSaldo insuficiente para completar ação!");
+        }
+        
+    }
+    
+    
     public void extrato(){
         System.out.println("\n====================================================================");
         System.out.println("N Conta: " + this.numConta + "| Titular: " + this.nomeTitular);

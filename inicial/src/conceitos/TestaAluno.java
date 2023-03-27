@@ -17,7 +17,7 @@ public class TestaAluno {
         // instanciar é alocar um espaço na memória para a criação do objeto
         
         // Instanciando o objeto 
-        Aluno a1 = new Aluno();
+        Aluno_original a1 = new Aluno_original();
         a1.setRgm(120);
         a1.setNotaAluno(8);
         a1.setNomeAluno("Carlos");
@@ -26,7 +26,7 @@ public class TestaAluno {
         System.out.println("a1: ");
         a1.printAluno();
         
-        Aluno a2 = new Aluno();
+        Aluno_original a2 = new Aluno_original();
         a2.setRgm(180);
         a2.setNotaAluno(9);
         a2.setNomeAluno("Adriana");
@@ -35,7 +35,7 @@ public class TestaAluno {
         System.out.println("\na2: ");
         a2.printAluno();
         
-        Aluno a3;
+        Aluno_original a3;
 //        a3.printAluno(); // Da erro pois não alocamos espaço na memória para a3 com o "new"
         
         a3=a1;  // a3 recebe o mesmo endereço guardado em a1, pois a passagem de valores de objetos se dá por referência
@@ -50,7 +50,7 @@ public class TestaAluno {
         System.out.println("\nAlterado RGM pelo a3\n-------------------------------------");
         System.out.printf("%s%s%n%s%s%n","a1 RGM: ", a1.getRgm(), "a3 RGM: ", a3.getRgm());
         
-        a3 = new Aluno();  // a partir de agora, instanciamos um novo objeto e a variável a3 está apontando para ele, deixando de ter ligação com o a1
+        a3 = new Aluno_original();  // a partir de agora, instanciamos um novo objeto e a variável a3 está apontando para ele, deixando de ter ligação com o a1
         a3.setRgm(195);
         a3.setNomeAluno("Odair");
         a3.setCursoAluno("Engenharia");
