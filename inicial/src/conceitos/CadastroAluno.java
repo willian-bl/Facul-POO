@@ -67,4 +67,64 @@ public class CadastroAluno {
     }
     
     
+    // Criar um método para retirar um aluno do vetor
+    public Aluno excluiAluno(int rgm){
+    // Se encontrar o aluno que tenha o rgm igual ao rgm passado como parâmetro, atribuir null para a posição onde está armazenado.
+    // O método retorna o aluno que foi excluído. Se não encontrar aluno para ser excluído, o método retorna null
+        for (int i = 0; i < alunos.length; i++) {
+            if(alunos[i] != null){
+                if(alunos[i].getRgm() == rgm){
+                    Aluno a = alunos[i];
+                    alunos[i] = null;
+                    return a;
+                }
+            }
+        }
+        return null;
+    }
+    
+    
+    public Aluno obtemAlunoMaiorNota(){
+        // Retorna o aluno com a maior nota
+        double maiorNota = -1;
+        Aluno alunoMaiorNota = null;
+        for(Aluno aluno:alunos){
+            if(aluno != null && aluno.getNotaAluno() > maiorNota){
+                alunoMaiorNota = aluno;
+                maiorNota = aluno.getNotaAluno();
+            }
+        }
+        
+        return alunoMaiorNota;
+    }
+    
+    
+    // Método para facilitar a criação do vetor de alunos aprovados. Ele é acessível somente dentro da classe,
+    // para nos auxiliar. Métodos auxiliares são privados!
+    private void incluiVetor(Aluno vetor[], Aluno a){
+        for (int i = 0; i < vetor.length; i++) {
+            if (vetor[i] == null){
+                vetor[i] = a;
+                return;
+            }
+        }
+    }
+    
+    
+    // Escrever um método que retorna um vetor com todos os alunos aprovados. Para ser aprovado 
+    // o aluno precisa ter nota maior ou igual a seis
+    public Aluno[] obtemAlunosAprovados(){
+        // retorna um vetor com objetos do tipo aluno
+        Aluno aprovados[] = new Aluno[alunos.length];
+        for (Aluno a : alunos) {
+            if(a != null && a.getNotaAluno() >= 6){
+                incluiVetor(aprovados, a);
+            }
+        }
+        return aprovados;
+    }
+    
+    
+    // Escrever um método para retornar a quantidade de alunos com nota maior que a media de todos os alunos
+    
 }
