@@ -18,3 +18,29 @@ O código fonte .java é compilado em .class para ser executado na JVM (Java Vir
 O JDK é o Java Development Kit (ou kit de desenvolvimento Java). Quem pretende desenvolver em JAVA tem que ter esse kit instalado na máquina. Ele já vem também com o JRE.
 
 O Java possui versões LTS (Long Term Support) e Feature Releases. As feature releases são lançadas de 6 em 6 meses. São versões oficiais que trazem novas funcionalidades para os programadores testarem. Porém, o suporte dessas versões é de apenas 6 meses. Já as LTS's são lançadas de 3 em 3 anos e trazem um apanhado das funcionalidades lançadas com as Feature Releases, tendo um tempo de suporte bem maior que as feature releases. É recomendado usar LTS em ambiente de produção, para não precisar ficar atualizando a versão do Java a cada 6 meses.
+
+------- HERANÇA ---------------------------
+O que é? 
+	Criar novas classes a partir de classes já existentes
+
+Por que fazer isso?
+	Evita repetição de código
+	Facilita a manutenção
+
+Dica: Quando faz sentido usar herança?
+	Lembrar: Herança tem haver com o relacionamento "é um/uma":
+	Ex: Em um programa, onde tenho pessoa física e jurídica, tanto a pessoa física quanto a jurídica É UMA pessoa. Logo, posso criar uma classe pessoa e fazer com que pessoa física e pessoa jurídica herdem da classe pessoa
+
+UML:
+	Na UML , uma seta com a ponta sem preenchimento (aberta) sai da classe que está herdando (subclasse) e chega na classe que está sendo a "mãe" (super classe)
+
+Nomenclatura:
+	Classe que está sendo herdada -> Superclasse (ou classe mãe/pai)
+	Classe que está herdando -> Subclasse (ou classe filha)
+
+Tipos de herança:
+	Herança múltipla -> Herdar diretamente de duas classes (no Java não da para fazer isso)
+	Herança multinível -> Podemos ter mais de um nível de herança. 
+		Por exemplo: Classe C herda da classe B que herda da classe A. (C -> B -> A)
+		Assim, a classe B será a superclasse da classe C mas, ao mesmo tempo, será uma subclasse da classe A que, por sua vez, é a superclasse da classe B. Assim, tanto B quanto C herdam de A, mas B herda diretamente, enquanto C herda indiretamente.
+		 
