@@ -126,5 +126,36 @@ public class CadastroAluno {
     
     
     // Escrever um método para retornar a quantidade de alunos com nota maior que a media de todos os alunos
+    public int qtdNotaMaiorQueMedia(){
+        int qtd = 0;  // Variável para ser retornada
+        
+        // Variáveis para calcular a média
+        double media;
+        double soma = 0;
+        double qtdAlunosCadastrados = 0;
+        
+        for(Aluno a:this.alunos){
+            if(a != null){
+                soma += a.getNotaAluno();
+                qtdAlunosCadastrados++;
+            }
+        }
+        
+        
+        // Caso não teha nenhum aluno cadastrado, para não dar erro de divisão por zero
+        if(qtdAlunosCadastrados == 0){
+            return 0;
+        }
+        
+        media = soma / qtdAlunosCadastrados;
+        
+        for(Aluno a:this.alunos){
+            if(a != null && a.getNotaAluno() > media){
+                qtd++;
+            }
+        }
+    
+    return qtd;
+    }
     
 }

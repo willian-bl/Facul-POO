@@ -43,4 +43,12 @@ Tipos de herança:
 	Herança multinível -> Podemos ter mais de um nível de herança. 
 		Por exemplo: Classe C herda da classe B que herda da classe A. (C -> B -> A)
 		Assim, a classe B será a superclasse da classe C mas, ao mesmo tempo, será uma subclasse da classe A que, por sua vez, é a superclasse da classe B. Assim, tanto B quanto C herdam de A, mas B herda diretamente, enquanto C herda indiretamente.
+
+------- CLASSE ABSTRATA ---------------------------
+*A classe abstrata serve de modelo para a crição de outras classes
+*A classe abstrata pode ser herdada mas não pode ser instanciada, ou seja, não é possível criar objetos a partir dela
+*A classe abstrata pode conter métodos abstratos
+*Um método abstrato é apenas declarado, ele não é implementado
+*Os métodos abstratos precisam ser, obrigatoriamente, implementados nas subclasses das classes abstratas
+*A palavra reservada da linguagem Java para declarar uma classe e/ou método abstrato é "abstract"
 		 

@@ -30,6 +30,9 @@ public class TestaCadastroAlunos {
         System.out.println("Quantidade de alunos aprovados: " + cad.quantidadedeAprovados());
         desenhaLinha();
         
+        System.out.println("Quantidade de alunos que tiraram nota maior que a media: " + cad.qtdNotaMaiorQueMedia());
+        desenhaLinha();
+        
         a2.printAluno();
         cad.alteraNota(20, 10);
         a2.printAluno();
@@ -60,6 +63,8 @@ public class TestaCadastroAlunos {
                 System.out.println("Nome: " + a_aprov.getNomeAluno() + " | Nota: " + a_aprov.getNotaAluno());
             }
         }
+        
+        desenhaLinha();
         
     }
 }
