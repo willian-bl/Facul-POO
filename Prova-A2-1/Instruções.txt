@@ -1,0 +1,51 @@
+A2 - Primeira prova - Em dupla com consulta
+
+1. Criar uma classe abstrata denominada de Produto com os seguintes atributos e métodos:
+
+Atributos:
+	int id; String nome; String marca; double preco
+
+Métodos:
+	. construtor para todos os atributos
+	. get/set para cada um dos atributos
+	. void mostraDadosProduto( ) – esse método deve ser declarado como abstrato
+Observação: nos métodos que alteram o preço do produto, aceitar apenas valores maiores que zero. Se for informado um valor menor ou igual a zero, o preço do produto não deve ser alterado.
+
+
+2. Criar uma subclasse denominada de ProdutoPerecivel que herda da classe Produto e possui o seguinte atributo e métodos:
+
+Atributos:
+	String dataValidade
+
+Métodos:
+	. construtor para todos os atributos
+	. get/set para o atributo
+	. void mostraDadosProduto( ) – esse método deve mostrar todos os dados do ProdutoPerecivel
+
+
+3. Criar uma subclasse denominada de ProdutoEletronico que herda da classe Produto e possui o seguinte atributo e métodos:
+
+Atributos:
+	int voltagem
+
+Métodos:
+	. construtor para todos os atributos
+	. get/set para o atributo
+	. void mostraDadosProduto( ) – esse método deve mostrar todos os dados do ProdutoEletronico
+
+
+4. Criar uma classe denominada de Cadastro. Nessa classe são declarados dois vetores: perecíveis e eletrônicos. O vetor perecíveis é utilizado para armazenar os objetos do tipo ProdutoPerecivel e o vetor eletrônicos é utilizado para armazenar os objetos do tipo ProdutoEletronico. Definir um tamanho de 30 para cada um dos vetores.
+
+Os métodos definidos para essa classe são:
+
+	void adicionaPerecivel (ProdutoPerecivel p) – esse método adiciona em uma posição livre do vetor perecíveis o parâmetro p recebido pelo método. Se não existir uma posição livre no vetor para inserir o parâmetro p, o método deve mostrar uma mensagem informando que o vetor está cheio.
+
+	void adicionaEletronico (ProdutoEletronico p) – esse método adiciona em uma posição livre do vetor eletrônicos o parâmetro p recebido pelo método. Se não existir uma posição livre no vetor para inserir o parâmetro p, o método deve mostrar uma mensagem informando que o vetor está cheio.
+
+	Void removePerecivel (ProdutoPerecivel p) – esse método percorre o vetor perecíveis até encontrar o produto perecível que tenha o id igual ao id do produto perecível p passado como parâmetro. Se encontrar, retirar o produto do vetor. Se não encontrar, mostrar mensagem dizendo que o produto não foi encontrado.
+
+	ProdutoPerecivel obtemProdutoMaisBarato ( ) – esse método percorre o vetor perecíveis e retorna o produto mais barato, ou seja, aquele com o menor preço.
+
+	ProdutoEletronico obtemProdutoMaisCaro ( ) – esse método percorre o vetor eletronicos e retorna o produto mais caro, ou seja, aquele com o maior preço.
+
+	void listaMarcaComum( ) – esse método mostra todas as marcas de um ProdutoPerecivel e que é marca também de um ProdutoEletronico.
