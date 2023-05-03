@@ -51,4 +51,37 @@ Tipos de herança:
 *Um método abstrato é apenas declarado, ele não é implementado
 *Os métodos abstratos precisam ser, obrigatoriamente, implementados nas subclasses das classes abstratas
 *A palavra reservada da linguagem Java para declarar uma classe e/ou método abstrato é "abstract"
-		 
+
+------- POLIMORFISMO ------------------------------
+Objetos de diferentes classes podem ser tratados de maneira semelhante. 
+Isso é possível porque mesmo que duas classes tenham a mesma linha de herança, elas podem ter implementações distintas para um mesmo método, desde que a assinatura do método seja mantida. 
+Com isso, uma variável da superclasse pode referenciar uma variável da subclasse, por exemplo. 
+
+-> O polimorfismo está muito ligado com o conceito de herança
+
+Conceitos relacionados:
+	*Mundo: São todos os atributos e métodos de uma classe. Ex: O mundo da classe "Professor" é o conjunto de seus atributos (Código, nome e curso) e métodos (getCodigo, setCodigo, getNome ...)
+	*Casting: em português, coerção, é forçar uma variável a se tornar de outro tipo.  
+	*Interface: é uma coleção de métodos que uma classe pode implementar. Assim como as classes abstratas, as interfaces não podem ser instanciadas, apenas implementadas. Porém a principal diferença entre interface e classe abstrata é que a classe abstrata pode conter métodos implementados ou concretos (que terão sua implementação herdada para as classes filhas), já a interface não: todos os seus métodos são métodos abstratos. Além disso, na interface podemos ter atributos, porém estes sempre serão valores CONSTANTES, que não podem ser alterados. Não existe "classe filha" de interfaces, dizemos apenas que a classe está implementando uma certa interface. Em Java, é possível que uma mesma classe implemente várias interfaces, mesmo não sendo possível a herança múltipla.
+
+Exemplo de atribuições de objetos usando polimorfismo:
+
+	Com o polimorfismo, podemos atribuir um objeto da classe filha a uma variável da classe pai. Ex:
+Professor p1 = new ProfessorHorista();
+	Isso é possível porque o mundo de Professor está dentro da classe ProfessorHorista, pois ele foi herdado da classe pai (Professor). O interessante é que TODOS os atributos de ProfessorHorista serão instanciados, eles existirão na memória do programa mas, através da variável p1, só poderemos acessar os atributos que existem na classe Professor. O mesmo vale para os métodos. Isso porque Professor só enxerga o seu mundo, ou seja, não enxerga o mundo de ProfessorHorista (que é formado pelo mundo da classe Professor + os seus próprios atributos e métodos). 
+	Mas se todos os atributos e métodos do ProfessorHorista estão definidos, então conseguimos transformar a variável p1 em uma variável do tipo ProfessorHorista? Sim, mas isso NÃO é feito por meio de uma atribuição comum, do tipo:
+ProfessorHorista p2 = p1;
+	Para fazer essa transformação precisamos usar o "casting" ou "coerção", em português, que é forçar uma variável a se tornar de outro tipo. Em Java, fazemos isso da seguinte forma:
+ProfessorHorista p2 = (ProfessorHorista)p1
+	Assim, estamos transformando o conteúdo da variável p1 para o tipo ProfessorHorista antes de realizar a atribuição para p2. Dessa forma, p2 será do tipo ProfessorHorista e passaremos a ter acesso a todos os seus atributos e métodos, diferente do que acontecia com a variável p1. O casting é necessário pois o Java é uma linguagem fortemente tipada.
+	Além disso, caso quisermos usar algum método da classe filha, precisaremos fazer a conversão da variável da classe pai (como no exemplo anterior). Mas para fazer a coerção devemos saber exatamente com que tipo de objeto estamos lidando. Uma forma de fazer isso é usando o operador "instanceof" do Java. Ex:
+p1 instanceof ProfessorHorista;
+	Observe que mesmo p1 sendo do tipo Professor, o objeto que foi instanciado na variável p1 é do tipo ProfessorHorista. Logo, a verificação retornará true.
+
+	Outra informação sobre isso é que não conseguimos fazer ao contrário, ou seja, atribuir um objeto da classe pai na classe filha. Ex:
+ProfessorHorista p3 = new Professor();
+	Isso porque se a variável é do tipo ProfessorHorista ela espera receber todos os atributos e métodos do mundo de ProfessorHorista, o que não vai acontecer, pois ao instanciar um objeto da classe Professor() ele não "enxerga" os atributos e métodos definidos exclusivamente em ProfessorHorista, ou seja, não tem acesso ao seu mundo completo, somente a parte dele (aquilo que ProfessorHorista herdou de Professor). Assim, a linha de código do exemplo dará erro.
+
+	Resumindo: "o pai recebe o filho, mas o filho não recebe o pai"
+
+*No Java, para descobrir se um objeto é de uma determinada classe usamos o operador "instanceof"
