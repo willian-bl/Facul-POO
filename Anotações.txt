@@ -85,3 +85,28 @@ ProfessorHorista p3 = new Professor();
 	Resumindo: "o pai recebe o filho, mas o filho não recebe o pai"
 
 *No Java, para descobrir se um objeto é de uma determinada classe usamos o operador "instanceof"
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+>> Atributos de instância ou de classe <<
+
+Atributos podem ser de instância ou de classe. O atributo de instância está relacionado ao objeto, ou seja, cada objeto possui seus próprios atributos de instância.
+Já os atributos de classe, como o nome diz, pertencem à classe não estando associado a um objeto específico. O atributo de instância é único e é compartilhado entre objetos da classe. Ele existe independente da existência de um objeto.
+
+Exemplo:
+public class Exemplo{
+	private int x;
+	private static int y;
+                  |
+                  V
+A palavra      "static" na declaração do atributo indica que o atributo é de CLASSE e não de instância
+Não precisamos ter um objeto instanciado para acessar o atributo. No exemplo anterior, mesmo sem um objeto podemos chamar o atributo. Se ele for público, fazemos da seguinte forma:
+NomeDaClasse.nomeAtributo
+
+Também existem métodos de classe e de atributo. Podemos definir eles usando o static também. As mesmas regras dos atributos de classe e de instância são válidos para os métodos.
+
+Além disso, métodos de classe (static) não podem acessar atributos de instância, porque senão eles dependeriam da instanciação de um objeto para funcionar.
+
+No trabalho:
+O vetor Contato será um atributo de classe
+Não pode ter um id repetido no vetor de Agenda
