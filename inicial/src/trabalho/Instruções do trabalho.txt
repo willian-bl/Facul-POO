@@ -76,3 +76,8 @@ Empresa: xxxxxxxxxxxxxxx Cargo: xxxxxxxxxx
 		- ContatoProfissional buscaContatoPrifissional(String nome)
 		- void insertProfissional(ContatoProfissional cprof)
 
+------------------------------------------------------
+Alterações:
+
+*Na classe Agenda, foram definidos como atributos 2 vetores, um com objetos do tipo ContatoPessoal e outro com objetos do tipo ContatoProfissional. Depois da aula de polimorfismo, substituir os dois vetores por um único vetor com variáveis do tipo Contato
+*Fazer um método mostra para mostrar os detalhes dos contatos da lista

@@ -45,11 +45,11 @@ public class testaAgenda {
         ContatoProfissional cprof2 = new ContatoProfissional(4, "Diego", "R Tiradentes", "91234-5678", "diegoqwer@gmail.com", "Jussara", "Assistente de TI");
         
         Agenda agenda = new Agenda();
-        agenda.insertPessoal(cpes1);
-        agenda.insertPessoal(cpes2);
-        agenda.insertPessoal(cpes3);
-        agenda.insertProfissional(cprof1);
-        agenda.insertProfissional(cprof2);
+        agenda.insertContato(cpes1);
+        agenda.insertContato(cpes2);
+        agenda.insertContato(cpes3);
+        agenda.insertContato(cprof1);
+        agenda.insertContato(cprof2);
         
         // Testes
         ContatoPessoal pessoal;
@@ -59,14 +59,14 @@ public class testaAgenda {
         
         System.out.println("Buscando contatos pessoais: \n");
         id = 2;
-        pessoal = agenda.buscaContatoPessoal(id);
+        pessoal = (ContatoPessoal)agenda.buscaContato(id);
         tentaPrintarContato(pessoal);
         
         pulaLinha();
         
 //        nome = "Adalberto";
         nome = "José";
-        pessoal = agenda.buscaContatoPessoal(nome);
+        pessoal = (ContatoPessoal)agenda.buscaContato(nome);
         tentaPrintarContato(pessoal);
         
         pulaLinha();
@@ -74,13 +74,13 @@ public class testaAgenda {
         System.out.println("Buscando contatos profissionais: \n");
 //        id = 1;
         id = 4;
-        profissional = agenda.buscaContatoProfissional(id);
+        profissional = (ContatoProfissional)agenda.buscaContato(id);
         tentaPrintarContato(profissional);
         
         pulaLinha();
         
         nome = "fernando";
-        profissional = agenda.buscaContatoProfissional(nome);
+        profissional = (ContatoProfissional)agenda.buscaContato(nome);
         tentaPrintarContato(profissional);
         
         desenhaLinha();

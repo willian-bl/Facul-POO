@@ -7,17 +7,17 @@ package trabalho;
 /**
  *
  * @author willi
+ * Classe alterada com os conceitos do polimorfismo, passados na aula de 26/04
  */
 public class Agenda {
-    private ContatoPessoal cpessoais[] = new ContatoPessoal[100];
-    private ContatoProfissional cprofissionais[] = new ContatoProfissional[100];
-
+    private Contato contatos[] = new Contato[200];
     
-    // -------------------- Métodos ContatoPessoal --------------------
-    public void insertPessoal(ContatoPessoal cpes){
-        for (int i = 0; i < this.cpessoais.length; i++){
-            if(this.cpessoais[i] == null){
-                this.cpessoais[i] = cpes;
+    
+    // -------------------- Novos Métodos Contato --------------------
+    public void insertContato(Contato c){
+        for (int i = 0; i < this.contatos.length; i++){
+            if(this.contatos[i] == null){
+                this.contatos[i] = c;
                 return;  // Sai para não adicionar o contato nas outras posições livres
             }
         }
@@ -25,8 +25,8 @@ public class Agenda {
     }
     
     
-    public ContatoPessoal buscaContatoPessoal(int id){
-        for (ContatoPessoal contato:this.cpessoais) {  // for de outra forma - percorrendo os itens do vetor
+    public Contato buscaContato(int id){
+        for (Contato contato:this.contatos) {  // for de outra forma - percorrendo os itens do vetor
             if (contato != null){
                 if(contato.getNumeroDoContato() == id){
                     return contato;
@@ -37,9 +37,9 @@ public class Agenda {
     }
     
     
-    public ContatoPessoal buscaContatoPessoal(String parametroNome){
+    public Contato buscaContato(String parametroNome){
         String nomeContato;
-        for (ContatoPessoal contato:this.cpessoais){
+        for (Contato contato:this.contatos){
             if(contato != null){
                 nomeContato = contato.getNomeDoContato();
                 if(nomeContato.equalsIgnoreCase(parametroNome)){
@@ -51,43 +51,6 @@ public class Agenda {
     }
     
     
-    // -------------------- Métodos ContatoProfissional --------------------
-    public void insertProfissional(ContatoProfissional cprof){
-        for (int i = 0; i < this.cpessoais.length; i++){
-            if(this.cprofissionais[i] == null){
-                this.cprofissionais[i] = cprof;
-                return;
-            }
-        }
-        System.out.println("Sem espaço na agenda para contatos profissionais!");
-    }
-    
-    
-    public ContatoProfissional buscaContatoProfissional(int id){
-        for (ContatoProfissional contato:this.cprofissionais) {
-            if (contato != null){
-                if(contato.getNumeroDoContato() == id){
-                    return contato;
-                }
-            }
-        }
-        return null;
-    }
-    
-    
-    public ContatoProfissional buscaContatoProfissional(String parametroNome){
-        String nomeContato;
-        for (ContatoProfissional contato:this.cprofissionais) {
-            if (contato != null){
-                nomeContato = contato.getNomeDoContato();
-                if(nomeContato.equalsIgnoreCase(parametroNome)){
-                    return contato;
-                }
-            }
-        }
-        return null;
-    }
-        
     
     
 }
