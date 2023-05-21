@@ -110,3 +110,70 @@ Além disso, métodos de classe (static) não podem acessar atributos de instân
 No trabalho:
 O vetor Contato será um atributo de classe
 Não pode ter um id repetido no vetor de Agenda
+
+
+>> Interfaces <<
+
+As interfaces são construções similares às classes, mas nas interfaces os métodos são apenas declarados e não implementados.
+
+*A interface dita os comportamentos das classes que irão implementá-las.
+
+*Para declarar uma interface em Java utilizamos a palavra "interface". Ex:
+public interface MinhaInterface{
+	void metodo1(String s);
+	String metodo2();
+}
+
+*Existe polimorfismo de interfaces. Podemos criar uma variável do tipo da interface e guardar um objeto que pertence a uma classe que implementa aquela interface
+
+>> Exceções <<
+
+Uma exceção é um comportamento indesejado ou inesperado que ocorre em um programa
+
+*Ex: Ao fazer uma divisão, caso o valor do quociente seja 0, o programa lançará uma exceção dizendo que não é possível dividir por zero
+*As exeções podem ser tratadas para que o programa não pare de rodar, mesmo quando chega nessas situações inesperadas.
+*Em Java, para tratar exceções, usamos o bloco:
+try{
+	...
+}
+catch (Exception e){
+	...
+}
+*Dentro do try colocamos o bloco que pode gerar uma exceção.
+*Na declaração do catch, colocamos o nome da exceção que queremos tratar e uma variável que vai receber essa exceção. Dentro do catch, colocamos o que o programa deve fazer caso ocorra a exceção
+
+*As exceções são classes do Java e cada uma delas tem o seu significado e pode ser tratada separadamente, usando um catch para cada exceção que possa ocorrer
+	Exemplos de exceções Java: ArithmeticException e NullPointerException
+
+*Também podemos lançar exceções, para impedir comportamentos indesejados no código. Porém, se essas exceções não forem tratadas por um bloco try...catch... o programa dará erro e sua execução será interrompida.
+*Exemplo de como lançar exceções:
+public void meuMetodo() throws ExceptionClass{
+	...
+	throw new ExceptionClass("Uma exceção ocorreu!");
+}
+*Além disso, conseguimos criar nossas próprias exceções. Fazemos isso criando uma classe que herda da classe Java Exception. Ex:
+public class MinhaExcecao extends Exception {
+    public MinhaExcecao(String mensagem) {
+        super(mensagem);
+    }
+}
+
+*Podemos pegar a mensagem de uma exceção usando o método getMessage(): excecao.getMessage()
+
+
+>> Coleções em JAVA <<
+Coleções são repositórios de dados
+As coleções são conjuntos de classes utilizadas para o armazenamento de dados.
+As coleções podem armazenar dados de diferentes maneiras: listas, conjuntos, mapas etc.
+As coleções são oclasses genéricas, uma classe genérica é aquela onde o tipo do dado utilizado pela classe é determinado em tempo de execução
+O pacote onde as coleções são encontradas é: java.util.*
+
+-Os tipos nas classes genéricas devem representar objetos. 
+	Nas coleções, tipos devem ser sempre classes. Por isso, tipos primitivos não podem ser usados.
+	Assim, cada tipo primitivo tem uma classe empacotadora correspondente, que usamos no lugar do tipo primitivo:
+		int -> Integer
+		double -> Double
+
+A classe ArrayList implementa a interface List
+
+
