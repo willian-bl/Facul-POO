@@ -18,6 +18,13 @@ public class ContatoPessoal extends Contato {
         this.relacaoDeProximidade = relacaoDeProximidade;
     }
 
+    // Sem o email
+    public ContatoPessoal(int numeroDoContato, String nomeDoContato, String endereco, String telefone, String dataDeAniversario, String relacaoDeProximidade) {
+        super(numeroDoContato, nomeDoContato, endereco, telefone);
+        this.dataDeAniversario = dataDeAniversario;
+        this.relacaoDeProximidade = relacaoDeProximidade;
+    }
+    
     public String getDataDeAniversario() {
         return dataDeAniversario;
     }

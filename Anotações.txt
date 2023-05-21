@@ -87,6 +87,18 @@ ProfessorHorista p3 = new Professor();
 *No Java, para descobrir se um objeto é de uma determinada classe usamos o operador "instanceof"
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+>> Strings <<
+Para comparar Strings podemos utilizar os métodos "equals" ou "iqualsIgnoreCase". Esses métodos retornam true se as Strings são iguais ou false caso sejam diferentes.
+Exemplos: 
+s1 = "teste"; 
+s2 = "teste"; 
+s3 = "TESTE";
+
+s1.equals(s2) -> retorna true
+s1.equals(s3) -> retorna false
+s1.equalsIgnoreCase(s2) -> retorna true
+s1.equalsIgnoreCase(s3) -> retorna true
+
 
 >> Atributos de instância ou de classe <<
 
@@ -126,6 +138,7 @@ public interface MinhaInterface{
 
 *Existe polimorfismo de interfaces. Podemos criar uma variável do tipo da interface e guardar um objeto que pertence a uma classe que implementa aquela interface
 
+
 >> Exceções <<
 
 Uma exceção é um comportamento indesejado ou inesperado que ocorre em um programa
@@ -162,6 +175,7 @@ public class MinhaExcecao extends Exception {
 
 
 >> Coleções em JAVA <<
+
 Coleções são repositórios de dados
 As coleções são conjuntos de classes utilizadas para o armazenamento de dados.
 As coleções podem armazenar dados de diferentes maneiras: listas, conjuntos, mapas etc.

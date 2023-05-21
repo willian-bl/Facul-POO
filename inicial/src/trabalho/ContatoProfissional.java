@@ -18,6 +18,14 @@ public class ContatoProfissional extends Contato{
         setCargo(cargo);
     }
     
+    // Sem email
+    public ContatoProfissional(int numeroDoContato, String nomeDoContato, String endereco, String telefone, String empresaOndeTrabalha, String cargo) {
+        super(numeroDoContato, nomeDoContato, endereco, telefone);
+        setEmpresaOndeTrabalha(empresaOndeTrabalha);
+        setCargo(cargo);
+    }
+    
+    
     public String getEmpresaOndeTrabalha() {
         return empresaOndeTrabalha;
     }

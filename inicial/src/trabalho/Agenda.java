@@ -6,15 +6,22 @@ package trabalho;
 
 /**
  *
- * @author willi
- * Classe alterada com os conceitos do polimorfismo, passados na aula de 26/04
+ * @author Willian Brito de Lima
+ * @author Leandro Henrique Guilhermiti de Oliveira
  */
 public class Agenda {
-    private Contato contatos[] = new Contato[200];
-    
+    private static Contato contatos[] = new Contato[100];
     
     // -------------------- Novos Métodos Contato --------------------
     public void insertContato(Contato c){
+        // Verifica se já existe um contato com esse id
+        for (int i = 0; i < this.contatos.length; i++) {
+            if(this.contatos[i] != null && this.contatos[i].getNumeroDoContato() == c.getNumeroDoContato()) {
+                System.out.println("Já existe um contato com esse número do contato (ID)!");
+                return;
+            }
+        }
+        
         for (int i = 0; i < this.contatos.length; i++){
             if(this.contatos[i] == null){
                 this.contatos[i] = c;
@@ -51,6 +58,37 @@ public class Agenda {
     }
     
     
+    public Contato deleteContato(int id){
+        Contato c;
+        for (int i = 0; i < this.contatos.length; i++){
+            if(this.contatos[i] != null){
+                c = this.contatos[i];
+                if(c.getNumeroDoContato() == id){
+                    this.contatos[i] = null;
+                    return c;
+                }
+            }
+        }
+        System.out.println("Não existe nenhum contato com esse id!");
+        return null;
+    } 
     
+    
+    // Função incompleta - continuar depois
+    public void updateContato(Contato cParam){
+        Contato c;
+        for (int i = 0; i < this.contatos.length; i++){
+            if (this.contatos[i] != null){
+                c = this.contatos[i];
+                if(c.getNumeroDoContato() == cParam.getNumeroDoContato()){
+                    if (c.getClass() == cParam.getClass())
+                    
+                }
+            }
+            
+            
+            
+        }
+    }
     
 }

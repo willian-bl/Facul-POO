@@ -9,7 +9,7 @@ package trabalho;
  * @author willi
  */
 public abstract class Contato {
-    private int numeroDoContato;
+    private int numeroDoContato; // id
     private String nomeDoContato;
     private String endereco;
     private String telefone;
@@ -23,7 +23,7 @@ public abstract class Contato {
         setEmail(email);
     }
     
-    public void Contato(int numeroDoContato, String nomeDoContato, String endereco, String telefone){
+    public Contato(int numeroDoContato, String nomeDoContato, String endereco, String telefone){
         setNumeroDoContato(numeroDoContato);
         setNomeDoContato(nomeDoContato);
         setEndereco(endereco);
