@@ -6,14 +6,14 @@ package trabalho;
 
 /**
  *
- * @author Willian Brito de Lima 
- * @author Leandro Henrique Guilhermiti de Oliveira 
+ * @author Willian Brito de Lima
+ * @author Leandro Henrique Guilhermiti de Oliveira
  */
 public class Agenda {
     private static Contato contatos[] = new Contato[100];
     
     // -------------------- Novos Métodos Contato --------------------
-    public void insertContato(Contato c){
+    public void insertContato(Contato c) throws FullArrayException{
         // Verifica se já existe um contato com esse id
         for (int i = 0; i < this.contatos.length; i++) {
             if(this.contatos[i] != null && this.contatos[i].getNumeroDoContato() == c.getNumeroDoContato()) {
@@ -28,7 +28,9 @@ public class Agenda {
                 return;  // Sai para não adicionar o contato nas outras posições livres
             }
         }
-        System.out.println("Sem espaço na agenda para contatos pessoais!");  // Se chegou até aqui, é porque o for acabou e não tinha nenhuma posição livre
+        // Se chegou até aqui, é porque o for acabou e não tinha nenhuma posição livre
+        // System.out.println("Sem espaço na agenda para contatos pessoais!"); 
+        throw new FullArrayException("O vetor de contatos está cheio!");
     }
     
     
@@ -72,6 +74,7 @@ public class Agenda {
         System.out.println("Não existe nenhum contato com esse id!");
         return null;
     }
+    
     
     public void updateContato(Contato cParam){
         Contato c = null;

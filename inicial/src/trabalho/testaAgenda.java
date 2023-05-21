@@ -8,7 +8,7 @@ package trabalho;
  *
  * @author willi
  */
-public class testaAgenda {
+public class TestaAgenda {
     
     public static void desenhaLinha(){
         System.out.println("\n------------------------------------------------\n");
@@ -46,12 +46,18 @@ public class testaAgenda {
         ContatoProfissional cprof2 = new ContatoProfissional(4, "Diego", "R Tiradentes", "91234-5678", "diegoqwer@gmail.com", "Jussara", "Assistente de TI");
         
         Agenda agenda = new Agenda();
-        agenda.insertContato(cpes1);
-        agenda.insertContato(cpes2);
-        agenda.insertContato(cpes3);
-        agenda.insertContato(cpes4);
-        agenda.insertContato(cprof1);
-        agenda.insertContato(cprof2);
+        
+        try{
+            agenda.insertContato(cpes1);
+            agenda.insertContato(cpes2);
+            agenda.insertContato(cpes3);
+            agenda.insertContato(cpes4);
+            agenda.insertContato(cprof1);
+            agenda.insertContato(cprof2);
+        }
+        catch (FullArrayException e){
+            System.out.println("Inclusão não foi feita! \n" + e.getMessage());
+        }
         
         // Testes
         ContatoPessoal pessoal;
@@ -98,7 +104,7 @@ public class testaAgenda {
         Contato c = new ContatoPessoal(1, "Leandro", "R Franca", "99192-9394", "05/06", "amigo");
         agenda.updateContato(c);
         
-       agenda.mostraAgenda();
+        agenda.mostraAgenda();
        
     }
 }
