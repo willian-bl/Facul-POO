@@ -6,8 +6,8 @@ package trabalho;
 
 /**
  *
- * @author Willian Brito de Lima
- * @author Leandro Henrique Guilhermiti de Oliveira
+ * @author Willian Brito de Lima 
+ * @author Leandro Henrique Guilhermiti de Oliveira 
  */
 public class Agenda {
     private static Contato contatos[] = new Contato[100];
@@ -71,23 +71,85 @@ public class Agenda {
         }
         System.out.println("Não existe nenhum contato com esse id!");
         return null;
-    } 
+    }
     
-    
-    // Função incompleta - continuar depois
     public void updateContato(Contato cParam){
-        Contato c;
+        Contato c = null;
+        boolean achou = false;
+        int pos = 0;
+        
         for (int i = 0; i < this.contatos.length; i++){
             if (this.contatos[i] != null){
                 c = this.contatos[i];
                 if(c.getNumeroDoContato() == cParam.getNumeroDoContato()){
-                    if (c.getClass() == cParam.getClass())
-                    
+                    achou = true;
+                    pos = i;
+                    break;
                 }
             }
-            
-            
-            
+        }
+        
+        if (achou){
+            if (c.getClass() == cParam.getClass()){
+                this.contatos[pos] = cParam;
+                System.out.println("Contato alterado!");
+            } else {
+                System.out.println("O contato passado não é da mesma classe que o contato de id " + c.getNumeroDoContato()); ;
+            }
+                
+        } else {
+            System.out.println("O contato não foi encontrado!");
+        }
+    }
+    
+    public ContatoPessoal[] obtemContatoPessoal(){
+        ContatoPessoal listaPessoal[] = new ContatoPessoal[100];
+        int pos = 0;
+        for(Contato c:this.contatos){
+            if(c instanceof ContatoPessoal){
+                listaPessoal[pos] = (ContatoPessoal)c;
+            }
+        }
+        return listaPessoal;
+    }
+    
+    public ContatoProfissional[] obtemContatoProfissional(){
+        ContatoProfissional listaProfissional[] = new ContatoProfissional[100];
+        int pos = 0;
+        for(Contato c:this.contatos){
+            if(c instanceof ContatoProfissional){
+                listaProfissional[pos] = (ContatoProfissional)c;
+                pos++;
+            }
+        }
+        return listaProfissional;
+    }
+    
+    public ContatoPessoal[] obtemAniversariante(String data){
+        String[] dataParam = data.split("/");
+        ContatoPessoal[] aniversariantes = new ContatoPessoal[100];
+        ContatoPessoal c2;
+        int pos = 0;
+        
+        for (Contato c:this.contatos) {
+            if(c instanceof ContatoPessoal){
+                c2 = (ContatoPessoal)c;
+                String[] dataObjeto = c2.getDataDeAniversario().split("/");
+                if(dataParam[0].equals(dataObjeto[0]) && dataParam[1].equals(dataObjeto[1])){
+                    aniversariantes[pos] = c2;
+                    pos++;
+                }
+            }
+        }
+        
+        return aniversariantes;
+    }
+    
+    public void mostraAgenda(){
+        for(Contato c:this.contatos){
+            if(c != null){
+                c.mostraDetalheContato();
+            }
         }
     }
     

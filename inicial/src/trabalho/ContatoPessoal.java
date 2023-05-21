@@ -46,7 +46,7 @@ public class ContatoPessoal extends Contato {
     System.out.println("ID: " + getNumeroDoContato() + " | Nome: " + getNomeDoContato() +
             "\nEndereço: " + getEndereco() + " | Telefone: " + getTelefone() + 
             "\nEmail: " + getEmail() +
-            "\nData de Aniversário: " + getDataDeAniversario() + " | Relação de proximidade: " + getRelacaoDeProximidade());
+            "\nData de Aniversário: " + getDataDeAniversario() + " | Relação de proximidade: " + getRelacaoDeProximidade() + '\n');
     }
     
 }

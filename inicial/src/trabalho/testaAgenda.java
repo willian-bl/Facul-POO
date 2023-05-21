@@ -87,5 +87,18 @@ public class testaAgenda {
         
         desenhaLinha();
         
+        for (ContatoPessoal c:agenda.obtemAniversariante("22/04")) {
+            if (c != null){
+                c.mostraDetalheContato();
+            }
+        }
+      
+        desenhaLinha();
+        
+        Contato c = new ContatoPessoal(1, "Leandro", "R Franca", "99192-9394", "05/06", "amigo");
+        agenda.updateContato(c);
+        
+       agenda.mostraAgenda();
+       
     }
 }

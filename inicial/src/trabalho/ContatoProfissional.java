@@ -47,7 +47,7 @@ public class ContatoProfissional extends Contato{
         System.out.println("ID: " + getNumeroDoContato() + " | Nome: " + getNomeDoContato() +
                 "\nEndereço: " + getEndereco() + " | Telefone: " + getTelefone() + 
                 "\nEmail: " + getEmail() +
-                "\nEmpresa: " + getEmpresaOndeTrabalha() + " | Cargo: " + getCargo());
+                "\nEmpresa: " + getEmpresaOndeTrabalha() + " | Cargo: " + getCargo() + '\n');
     }
     
 }
