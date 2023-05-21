@@ -13,6 +13,11 @@ Repositório com meus notebooks utilizados nas aulas de Programação Orientada 
 **Conteúdo:**
 - Fundamentos de Java (Apresentados ao longo das aulas, para compreensão dos exercícios de POO)
   - Assinatura de uma função Java
+  - Comparação de strings
+  - Casting (coerção de tipos)
+  - Arrays Java
+  - Coleções
+  - Tratamento de exceções
 - Introdução à Orientação a Objetos
   - Definindo classes
   - Atributos e métodos
@@ -20,3 +25,10 @@ Repositório com meus notebooks utilizados nas aulas de Programação Orientada 
   - Encapsulamento
   - Método construtor
   - Palavra reservada `this`: Referenciando a clase dentro de si mesma
+- Herança e polimorfismo
+  - Exercícios com herança e polimorfismo
+  - Palavra reservada `super`: Referenciando a clase mãe
+  - Classe abstrata
+  - Métodos abstratos
+  - Atributos e métodos de instância e de classe (uso do `static`)
+  - Interface
