@@ -9,6 +9,7 @@ package colecoes;
  * @author willi
  */
 
+// Arraylist cai na prova!
 import java.util.*;
 public class TestaArrayList {
     

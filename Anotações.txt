@@ -191,3 +191,9 @@ O pacote onde as coleções são encontradas é: java.util.*
 A classe ArrayList implementa a interface List
 
 
+>> Mapas <<
+
+*"Mapeia" uma chave (key) com um valor (value)
+- As chaves são únicas
+- Os valores podem se repetir
+*O mapa não tem uma ordem, ou seja, não é uma estrutura ordenada. Eu posso inserir os valores em uma ordem e na hora de mostrar o mapa eles serem mostrados em outra ordem
