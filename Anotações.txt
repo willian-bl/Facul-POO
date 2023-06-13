@@ -88,7 +88,7 @@ ProfessorHorista p3 = new Professor();
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 >> Strings <<
-Para comparar Strings podemos utilizar os métodos "equals" ou "iqualsIgnoreCase". Esses métodos retornam true se as Strings são iguais ou false caso sejam diferentes.
+Para comparar Strings podemos utilizar os métodos "equals" ou "equalsIgnoreCase". Esses métodos retornam true se as Strings são iguais ou false caso sejam diferentes.
 Exemplos: 
 s1 = "teste"; 
 s2 = "teste"; 
@@ -179,7 +179,7 @@ public class MinhaExcecao extends Exception {
 Coleções são repositórios de dados
 As coleções são conjuntos de classes utilizadas para o armazenamento de dados.
 As coleções podem armazenar dados de diferentes maneiras: listas, conjuntos, mapas etc.
-As coleções são oclasses genéricas, uma classe genérica é aquela onde o tipo do dado utilizado pela classe é determinado em tempo de execução
+As coleções são classes genéricas, uma classe genérica é aquela onde o tipo do dado utilizado pela classe é determinado em tempo de execução
 O pacote onde as coleções são encontradas é: java.util.*
 
 -Os tipos nas classes genéricas devem representar objetos. 
