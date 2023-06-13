@@ -6,7 +6,7 @@ Repositório com meus notebooks utilizados nas aulas de Programação Orientada 
 ## Detalhes
 
 **3º Semestre** <br>
-**Disciplina:** Programação Oreintada a Objetos <br>
+**Disciplina:** Programação Orientada a Objetos <br>
 **Professor:** Fernando Orsi <br>
 **Linguagem:** Java
 
