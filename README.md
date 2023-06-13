@@ -1,5 +1,5 @@
 # Programação Orientada a Objetos (POO)
-**:arrows_counterclockwise: Em curso** <br>
+**:heavy_check_mark: Matéria Finalizada** <br>
 
 Repositório com meus notebooks utilizados nas aulas de Programação Orientada a Objetos da faculdade do 3º Semestre <br>
 
@@ -15,8 +15,10 @@ Repositório com meus notebooks utilizados nas aulas de Programação Orientada 
   - Assinatura de uma função Java
   - Comparação de strings
   - Casting (coerção de tipos)
-  - Arrays Java
+  - Vetores Java
   - Coleções
+    - ArrayList
+    - Mapas (HashMap)
   - Tratamento de exceções
 - Introdução à Orientação a Objetos
   - Definindo classes
